@@ -43,8 +43,7 @@ public class ParkingController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<
-            ParkingDTO> findById(@PathVariable String id) {
+    public ResponseEntity<ParkingDTO> findById(@PathVariable String id) {
         Parking parking = parkingService.findById(id);
         ParkingDTO result = parkingMapper.toParkingDTO(parking);
         return ResponseEntity.ok(result);
